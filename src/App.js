@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import Photo from './Photo';
-import axios from 'axios';
 
 const clientID = `?client_id=${process.env.REACT_APP_ACCESS_KEY}`;
 const mainUrl = `https://api.unsplash.com/photos/`;
@@ -57,6 +56,7 @@ function App() {
   if (!newImages) return;
   if (loading) return;
   setPage((oldPage) => oldPage + 1);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
  }, [newImages]);
 
  const event = () => {
